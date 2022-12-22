@@ -5,18 +5,25 @@
 
   .author-description {
     display: flex;
+    // align-items: center;
+    align-items: stretch;
   }
 
   .author-image {
-    margin-top: 12px;
     margin-right: 12px;
     margin-bottom: 0;
     min-width: 72px;
   }
 
+  .author-short-description {
+    display: flex;
+    align-items: center;
+  }
+
   .author-name-prefix {
     font-size: 90%;
     margin-right: 4px;
+    font-weight: bolder;
   }
 
   .author-name-content {
@@ -26,7 +33,6 @@
     font-weight: bolder;
     border-radius: 8px;
     transform-origin: center;
-    animation: flutter 2s infinite linear;
   }
 
   .author-introduction {
