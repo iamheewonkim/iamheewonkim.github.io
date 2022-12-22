@@ -1,69 +1,76 @@
-import React, { forwardRef } from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import Image from 'gatsby-image'
-
-import './index.scss'
+import React, { forwardRef } from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
+import HeewonKimMemoji from './heewonkim.png';
+import './index.scss';
 
 export const Bio = forwardRef((props, ref) => {
-  return <StaticQuery
-    query={bioQuery}
-    render={data => {
-      const { author, social, introduction } = data.site.siteMetadata
+  return (
+    <StaticQuery
+      query={bioQuery}
+      render={data => {
+        const { author, social, introduction } = data.site.siteMetadata;
 
-      return (
-        <div ref={ref} className="bio">
-          <div className="author">
-            <div className="author-description">
-              <Image
-                className="author-image"
-                fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
-                style={{
-                  borderRadius: `100%`,
-                }}
-              />
-              <div className="author-name">
-                <span className="author-name-prefix">Written by</span>
-                <Link to={'/about'} className="author-name-content">
-                  <span>@{author}</span>
-                </Link>
-                <div className="author-introduction">{introduction}</div>
-                <p className="author-socials">
-                  {social.instagram && (
-                    <a href={`https://www.instagram.com/${social.instagram}`}>
-                      Instagram
-                    </a>
-                  )}
-                  {social.github && (
-                    <a href={`https://github.com/${social.github}`}>GitHub</a>
-                  )}
-                  {social.medium && (
-                    <a href={`https://medium.com/${social.medium}`}>Medium</a>
-                  )}
-                  {social.twitter && (
-                    <a href={`https://twitter.com/${social.twitter}`}>
-                      Twitter
-                    </a>
-                  )}
-                  {social.facebook && (
-                    <a href={`https://www.facebook.com/${social.facebook}`}>
-                      Facebook
-                    </a>
-                  )}
-                  {social.linkedin && (
-                    <a href={`https://www.linkedin.com/in/${social.linkedin}/`}>
-                      LinkedIn
-                    </a>
-                  )}
-                </p>
+        return (
+          <div ref={ref} className="bio">
+            <div className="author">
+              <div className="author-description">
+                <img
+                  className="author-image"
+                  src={HeewonKimMemoji}
+                  alt={author}
+                  style={{
+                    width: '85px',
+                    height: '85px',
+                  }}
+                />
+                <div className="author-name">
+                  <span className="author-name-prefix">Written by</span>
+                  <Link to={'/about'} className="author-name-content">
+                    <span>@{author}</span>
+                  </Link>
+                  <div className="author-introduction">{introduction}</div>
+                  <p className="author-socials">
+                    {social.instagram && (
+                      <a href={`https://www.instagram.com/${social.instagram}`}>
+                        Instagram
+                      </a>
+                    )}
+                    {social.github && (
+                      <a href={`https://github.com/${social.github}`}>
+                        ✤ GitHub
+                      </a>
+                    )}
+                    {social.medium && (
+                      <a href={`https://medium.com/${social.medium}`}>Medium</a>
+                    )}
+                    {social.twitter && (
+                      <a href={`https://twitter.com/${social.twitter}`}>
+                        Twitter
+                      </a>
+                    )}
+                    {social.facebook && (
+                      <a href={`https://www.facebook.com/${social.facebook}`}>
+                        Facebook
+                      </a>
+                    )}
+                    {social.linkedin && (
+                      <a
+                        href={`https://www.linkedin.com/in/${social.linkedin}/`}
+                      >
+                        LinkedIn
+                      </a>
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )
-    }}
-  />
-})
+        );
+      }}
+    />
+  );
+});
 
 const bioQuery = graphql`
   query BioQuery {
@@ -89,6 +96,6 @@ const bioQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Bio
+export default Bio;
