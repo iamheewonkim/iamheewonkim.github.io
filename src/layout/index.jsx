@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Top } from '../components/top';
+import Top from '../components/top';
 import { Header } from '../components/header';
 import { ThemeSwitch } from '../components/theme-switch';
-import { Footer } from '../components/footer';
+import Footer from '../components/footer';
 import { rhythm } from '../utils/typography';
 
 import './index.scss';
