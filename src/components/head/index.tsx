@@ -1,9 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-export default function Head({ description, lang, meta, keywords, title }) {
+interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  meta: any[];
+  keywords: string[];
+}
+
+function Head({
+  title,
+  description,
+  lang = `en`,
+  meta = [],
+  keywords = [],
+}: Props) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -67,20 +80,6 @@ export default function Head({ description, lang, meta, keywords, title }) {
   );
 }
 
-Head.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-};
-
-Head.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-};
-
 const detailsQuery = graphql`
   query DefaultSEOQuery {
     site {
@@ -92,3 +91,4 @@ const detailsQuery = graphql`
     }
   }
 `;
+export default Head;
