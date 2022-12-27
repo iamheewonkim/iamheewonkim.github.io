@@ -1,5 +1,5 @@
 import React from 'react';
-import { UnicornIcon } from '../social-share/unicorn-icon';
+import { UnicornIcon } from '../unicorn-icon';
 import { TopContainer, TopLink } from './index.styles';
 
 interface Props {
