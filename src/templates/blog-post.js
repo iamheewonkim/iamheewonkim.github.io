@@ -8,7 +8,7 @@ import PostTitle from '../components/post-title';
 import PostDate from '../components/post-date';
 import PostContainer from '../components/post-container';
 import SponsorButton from '../components/sponsor-button';
-import { Bio } from '../components/bio';
+import Bio from '../components/bio';
 import PostNavigator from '../components/post-navigator';
 import { Disqus } from '../components/disqus';
 import { Utterances } from '../components/utterances';
