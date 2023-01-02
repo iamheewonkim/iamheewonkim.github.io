@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 
-import * as Elements from '../components/elements';
+// import * as Elements from '../components/elements';
+import Hr from '../components/hr';
 import { Layout } from '../layout';
 import Head from '../components/head';
 import PostTitle from '../components/post-title';
@@ -38,7 +39,8 @@ export default ({ data, pageContext, location }) => {
       {!!sponsor.buyMeACoffeeId && (
         <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
       )}
-      <Elements.Hr />
+      {/* <Elements.Hr /> */}
+      <Hr />
       <Bio />
       <PostNavigator pageContext={pageContext} />
       {!!disqusShortName && (

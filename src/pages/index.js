@@ -3,7 +3,7 @@ import _ from 'lodash';
 import React, { useMemo, useRef, useEffect, useState } from 'react';
 import Bio from '../components/bio';
 import { Category } from '../components/category';
-import { Contents } from '../components/contents';
+import Contents from '../components/contents';
 import Head from '../components/head';
 import { HOME_TITLE } from '../constants';
 import { useCategory } from '../hooks/useCategory';

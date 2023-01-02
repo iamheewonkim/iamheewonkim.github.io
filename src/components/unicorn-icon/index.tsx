@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Unicorn from './unicorn.svg';
+import { UnicornLink } from './index.style';
 
-import './index.scss'
-import Unicorn from './unicorn.svg'
-
-export const UnicornIcon = () => {
+function UnicornIcon() {
   return (
-    <a
+    <UnicornLink
       href="https://github.com/iamheewonkim"
       className="unicorn"
       aria-label="GitHub"
@@ -18,8 +17,9 @@ export const UnicornIcon = () => {
         className="icon"
         width="45"
         height="45"
-        viewBox="0 0 24 24"
       />
-    </a>
-  )
+    </UnicornLink>
+  );
 }
+
+export default UnicornIcon;
