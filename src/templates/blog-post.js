@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 
-// import * as Elements from '../components/elements';
 import Hr from '../components/hr';
 import { Layout } from '../layout';
 import Head from '../components/head';
@@ -11,8 +10,7 @@ import PostContainer from '../components/post-container';
 import SponsorButton from '../components/sponsor-button';
 import Bio from '../components/bio';
 import PostNavigator from '../components/post-navigator';
-import { Disqus } from '../components/disqus';
-import { Utterances } from '../components/utterances';
+import Utterances from '../components/utterances';
 import * as ScrollManager from '../utils/scroll';
 
 import '../styles/code.scss';
@@ -39,18 +37,9 @@ export default ({ data, pageContext, location }) => {
       {!!sponsor.buyMeACoffeeId && (
         <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
       )}
-      {/* <Elements.Hr /> */}
       <Hr />
       <Bio />
       <PostNavigator pageContext={pageContext} />
-      {!!disqusShortName && (
-        <Disqus
-          post={post}
-          shortName={disqusShortName}
-          siteUrl={siteUrl}
-          slug={pageContext.slug}
-        />
-      )}
       {!!utterances && <Utterances repo={utterances} />}
     </Layout>
   );
