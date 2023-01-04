@@ -1,6 +1,6 @@
-@import '../../styles/variables.scss';
+import styled from 'styled-components';
 
-.category-container {
+export const CategoryContainer = styled.ul`
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -11,8 +11,9 @@
   overflow: -moz-scrollbars-none; // Firefox
   z-index: 1;
   padding: 6px 20px;
+  scroll-behavior: smooth;
 
-  .item {
+  li {
     display: inline-block;
     margin: 0.25rem 6px 0.25rem 0;
     border-radius: 15px;
@@ -27,22 +28,28 @@
       font-size: 14px;
       box-sizing: border-box;
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  .item:last-child {
-    margin-right: 0;
+  ::-webkit-scrollbar {
+    display: none; // Safari and Chrome
   }
-}
 
-.category-container::-webkit-scrollbar {
-  display: none; // Safari and Chrome
-}
-
-.category-container {
-  scroll-behavior: smooth;
-}
-@media (prefers-reduced-motion: reduce) {
-  .my-smooth-container {
-    scroll-behavior: auto;
+  @media (prefers-reduced-motion: reduce) {
+    .my-smooth-container {
+      scroll-behavior: auto;
+    }
   }
-}
+`;
+
+// .category-container {
+//   scroll-behavior: smooth;
+// }
+// @media (prefers-reduced-motion: reduce) {
+//   .my-smooth-container {
+//     scroll-behavior: auto;
+//   }
+// }

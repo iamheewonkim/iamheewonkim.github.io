@@ -1,21 +1,30 @@
 import React, { forwardRef } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
-import Image from 'gatsby-image';
 import HeewonKimMemoji from './heewonkim.png';
-import './index.scss';
+import {
+  BioContainer,
+  BioAuthorDescription,
+  BioAuthorImg,
+  BioAuthorName,
+  BioAuthorSocial,
+} from './index.style';
 
-export const Bio = forwardRef((props, ref) => {
+interface Props {
+  props: React.ReactNode;
+  ref: React.RefObject<HTMLDivElement>;
+}
+
+function Bio({ props, ref }: Props) {
   return (
     <StaticQuery
       query={bioQuery}
       render={data => {
         const { author, social, introduction } = data.site.siteMetadata;
-
         return (
-          <div ref={ref} className="bio">
+          <BioContainer ref={ref} className="bio">
             <div className="author">
-              <div className="author-description">
-                <img
+              <BioAuthorDescription className="author-description">
+                <BioAuthorImg
                   className="author-image"
                   src={HeewonKimMemoji}
                   alt={author}
@@ -24,18 +33,13 @@ export const Bio = forwardRef((props, ref) => {
                     height: '85px',
                   }}
                 />
-                <div className="author-name">
+                <BioAuthorName className="author-name">
                   <span className="author-name-prefix">Written by</span>
                   <Link to={'/about'} className="author-name-content">
                     <span>@{author}</span>
                   </Link>
                   <div className="author-introduction">{introduction}</div>
-                  <p className="author-socials">
-                    {social.instagram && (
-                      <a href={`https://www.instagram.com/${social.instagram}`}>
-                        Instagram
-                      </a>
-                    )}
+                  <BioAuthorSocial className="author-socials">
                     {social.github && (
                       <a href={`https://github.com/${social.github}`}>
                         ✤ GitHub
@@ -44,33 +48,28 @@ export const Bio = forwardRef((props, ref) => {
                     {social.medium && (
                       <a href={`https://medium.com/${social.medium}`}>Medium</a>
                     )}
-                    {social.twitter && (
-                      <a href={`https://twitter.com/${social.twitter}`}>
-                        Twitter
-                      </a>
-                    )}
-                    {social.facebook && (
-                      <a href={`https://www.facebook.com/${social.facebook}`}>
-                        Facebook
-                      </a>
-                    )}
                     {social.linkedin && (
                       <a
                         href={`https://www.linkedin.com/in/${social.linkedin}/`}
                       >
-                        LinkedIn
+                        ✤ LinkedIn
                       </a>
                     )}
-                  </p>
-                </div>
-              </div>
+                    {social.instagram && (
+                      <a href={`https://www.instagram.com/${social.instagram}`}>
+                        Instagram
+                      </a>
+                    )}
+                  </BioAuthorSocial>
+                </BioAuthorName>
+              </BioAuthorDescription>
             </div>
-          </div>
+          </BioContainer>
         );
       }}
     />
   );
-});
+}
 
 const bioQuery = graphql`
   query BioQuery {
@@ -98,4 +97,4 @@ const bioQuery = graphql`
   }
 `;
 
-export default Bio;
+export default forwardRef(Bio);
