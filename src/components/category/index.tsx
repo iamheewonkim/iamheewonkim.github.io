@@ -1,22 +1,22 @@
 import React, { useCallback, useRef } from 'react';
 import { rhythm } from '../../utils/typography';
-import './index.scss';
 import Item from './item';
+import { CategoryContainer } from './index.style';
 
-export const Category = ({ categories, category, selectCategory }) => {
-  const containerRef = useRef(null);
+function Category({ categories, category, selectCategory }) {
+  const containerRef = useRef<HTMLUListElement>(null!);
 
   const scrollToCenter = useCallback(
     tabRef => {
       const { offsetWidth: tabWidth } = tabRef.current;
       const { scrollLeft, offsetWidth: containerWidth } = containerRef.current;
       const tabLeft = tabRef.current.getBoundingClientRect().left;
-      const containerLeft = containerRef.current.getBoundingClientRect().left;
+      const containerLeft = containerRef.current!!.getBoundingClientRect().left;
       const refineLeft = tabLeft - containerLeft;
       const targetScollX =
         scrollLeft + refineLeft - containerWidth / 2 + tabWidth / 2;
 
-      containerRef.current.scroll({
+      containerRef.current!!.scroll({
         left: targetScollX,
         top: 0,
         behavior: 'smooth',
@@ -26,7 +26,7 @@ export const Category = ({ categories, category, selectCategory }) => {
   );
 
   return (
-    <ul
+    <CategoryContainer
       ref={containerRef}
       className="category-container"
       role="tablist"
@@ -50,6 +50,8 @@ export const Category = ({ categories, category, selectCategory }) => {
           scrollToCenter={scrollToCenter}
         />
       ))}
-    </ul>
+    </CategoryContainer>
   );
-};
+}
+
+export default Category;
