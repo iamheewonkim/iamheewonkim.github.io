@@ -5,11 +5,11 @@ import Header from '../components/header';
 import ThemeSwitch from '../components/theme-switch';
 import Footer from '../components/footer';
 import { rhythm } from '../utils/typography';
-
 import './index.scss';
 
-export const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
+function Layout({ location, title, children }) {
+  // const rootPath = `${__PATH_PREFIX__}/`;
+  const rootPath = `/`;
 
   return (
     <React.Fragment>
@@ -29,4 +29,6 @@ export const Layout = ({ location, title, children }) => {
       </div>
     </React.Fragment>
   );
-};
+}
+
+export default Layout;
