@@ -10,7 +10,7 @@ import { useCategory } from '../hooks/useCategory';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useRenderedCount } from '../hooks/useRenderedCount';
 import { useScrollEvent } from '../hooks/useScrollEvent';
-import { Layout } from '../layout';
+import Layout from '../layout';
 import * as Dom from '../utils/dom';
 import * as EventManager from '../utils/event-manager';
 
@@ -20,7 +20,7 @@ function getDistance(currentPos) {
   return Dom.getDocumentHeight() - currentPos;
 }
 
-export default ({ data, location }) => {
+export default function({ data, location }) {
   const { siteMetadata } = data.site;
   const { countOfInitialPost } = siteMetadata.configs;
   const posts = data.allMarkdownRemark.edges;
@@ -28,23 +28,20 @@ export default ({ data, location }) => {
     () => _.uniq(posts.map(({ node }) => node.frontmatter.category)),
     []
   );
-  const bioRef = useRef(null);
+  const bioRef = useRef<HTMLDivElement>(null);
   const [DEST, setDEST] = useState(316);
   const [count, countRef, increaseCount] = useRenderedCount();
   const [category, selectCategory] = useCategory(DEST);
 
-  useEffect(
-    tabRef => {
-      setDEST(
-        !bioRef.current
-          ? 316
-          : bioRef.current.getBoundingClientRect().bottom +
-              window.pageYOffset +
-              24
-      );
-    },
-    [bioRef.current]
-  );
+  useEffect(() => {
+    setDEST(
+      !bioRef.current
+        ? 316
+        : bioRef.current.getBoundingClientRect().bottom +
+            window.pageYOffset +
+            24
+    );
+  }, [bioRef.current]);
 
   useIntersectionObserver();
   useScrollEvent(() => {
@@ -76,7 +73,7 @@ export default ({ data, location }) => {
       />
     </Layout>
   );
-};
+}
 
 export const pageQuery = graphql`
   query {

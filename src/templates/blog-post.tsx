@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 
 import Hr from '../components/hr';
-import { Layout } from '../layout';
+import Layout from '../layout';
 import Head from '../components/head';
 import PostTitle from '../components/post-title';
 import PostDate from '../components/post-date';
@@ -16,7 +16,7 @@ import * as ScrollManager from '../utils/scroll';
 import '../styles/code.scss';
 import 'katex/dist/katex.min.css';
 
-export default ({ data, pageContext, location }) => {
+export default function({ data, pageContext, location }) {
   useEffect(() => {
     ScrollManager.init();
     return () => ScrollManager.destroy();
@@ -43,7 +43,7 @@ export default ({ data, pageContext, location }) => {
       {!!utterances && <Utterances repo={utterances} />}
     </Layout>
   );
-};
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
