@@ -9,15 +9,15 @@ interface Props {
 
 function Header({ title, location, rootPath }: Props) {
   const isRoot = location.pathname === rootPath;
-  return (
-    isRoot && (
+  if (!isRoot) return <></>;
+  else
+    return (
       <HeaderContainer className="home-header">
         <HeaderLink to={`/`} className="link">
           {title}
         </HeaderLink>
       </HeaderContainer>
-    )
-  );
+    );
 }
 
 export default Header;

@@ -4,10 +4,10 @@ import { StaticQuery, graphql } from 'gatsby';
 
 interface Props {
   title: string;
-  description: string;
-  lang: string;
-  meta: any[];
-  keywords: string[];
+  description?: string;
+  lang?: string;
+  meta?: any[];
+  keywords?: string[];
 }
 
 function Head({
