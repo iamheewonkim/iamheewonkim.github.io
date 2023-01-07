@@ -9,7 +9,7 @@ import './index.scss';
 
 function Layout({ location, title, children }) {
   // const rootPath = `${__PATH_PREFIX__}/`;
-  const rootPath = `/`;
+  const rootPath = `iamheewonkim.netlify.app/`;
 
   return (
     <React.Fragment>
