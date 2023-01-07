@@ -10,7 +10,7 @@ import {
 } from './index.style';
 
 interface Props {
-  props: React.ReactNode;
+  props?: React.ReactNode;
   ref: React.RefObject<HTMLDivElement>;
 }
 
