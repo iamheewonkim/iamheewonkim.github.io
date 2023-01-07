@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { rhythm } from '../utils/typography';
-import { AboutContainer } from './pages.style';
+import { AboutContainer } from '../styles/pages.style';
 import * as Lang from '../constants';
 
 export default function({ data }) {
