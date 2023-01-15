@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 
-import ThumbnailContainer from '../thumbnail-container'
-import ThumbnailItem from '../thumbnail-item'
+import ThumbnailContainer from './ThumbnailContainer'
+import ThumbnailItem from './ThumbnailItem'
 import { CATEGORY_TYPE } from '../../constants'
 
 function Contents({ posts, countOfInitialPost, count, category }) {

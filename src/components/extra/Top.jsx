@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import UnicornIcon from '../unicorn-icon'
+import UnicornIcon from './UnicornIcon'
 
-import './index.scss'
+import './styles/Top.scss'
 
 function Top({ title, location, rootPath }) {
   const isRoot = location.pathname === rootPath

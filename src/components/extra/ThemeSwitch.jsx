@@ -4,10 +4,10 @@ import Switch from 'react-switch'
 import * as Dom from '../../utils/dom'
 import * as Storage from '../../utils/storage'
 import { MoonIcon, SunIcon } from './Icon'
-import { getTheme, toggleTheme } from './module'
+import { getTheme, toggleTheme } from './module/theme'
 import { THEME } from '../../constants'
 
-import './index.scss'
+import './styles/ThemeSwitch.scss'
 
 function ThemeSwitch() {
   const [checked, setChecked] = useState(false)

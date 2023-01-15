@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import './index.scss'
+import './styles/PostNavigator.scss'
 
 function PostNavigator({ pageContext }) {
   const { previous, next } = pageContext

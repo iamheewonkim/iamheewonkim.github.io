@@ -1,7 +1,7 @@
 import React from 'react'
 
-import './index.scss'
-import Unicorn from './unicorn.svg'
+import './styles/UnicornIcon.scss'
+import Unicorn from './assets/unicorn.svg'
 
 function UnicornIcon() {
   return (

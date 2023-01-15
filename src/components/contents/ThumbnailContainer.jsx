@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './index.scss'
+import './styles/ThumbnailContainer.scss'
 
 function ThumbnailContainer({ children }) {
   return <div className="thumbnail-container">{children}</div>

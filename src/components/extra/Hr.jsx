@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './index.scss'
+import './styles/Hr.scss'
 
 function Hr() {
   return <hr className="custom-hr" />

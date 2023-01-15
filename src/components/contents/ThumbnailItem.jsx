@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { TARGET_CLASS } from '../../utils/visible'
 
-import './index.scss'
+import './styles/ThumbnailItem.scss'
 
 function ThumbnailItem({ node }) {
   return (

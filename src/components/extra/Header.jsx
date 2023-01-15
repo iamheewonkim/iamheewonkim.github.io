@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import './index.scss'
+import './styles/Header.scss'
 
 function Header({ title, location, rootPath }) {
   const isRoot = location.pathname === rootPath
