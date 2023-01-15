@@ -1,6 +1,6 @@
 import React, { useRef, useCallback, useEffect } from 'react'
 
-export const Item = ({ title, selectedCategory, onClick, scrollToCenter }) => {
+function Item({ title, selectedCategory, onClick, scrollToCenter }) {
   const tabRef = useRef(null)
 
   const handleClick = useCallback(() => {
@@ -25,3 +25,5 @@ export const Item = ({ title, selectedCategory, onClick, scrollToCenter }) => {
     </li>
   )
 }
+
+export default Item

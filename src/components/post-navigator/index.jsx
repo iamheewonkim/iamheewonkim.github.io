@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import './index.scss'
 
-export const PostNavigator = ({ pageContext }) => {
+function PostNavigator({ pageContext }) {
   const { previous, next } = pageContext
 
   return (
@@ -25,3 +25,4 @@ export const PostNavigator = ({ pageContext }) => {
     </ul>
   )
 }
+export default PostNavigator

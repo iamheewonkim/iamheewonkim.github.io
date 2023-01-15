@@ -8,7 +8,7 @@ const branch = 'master'
 const DARK_THEME = 'photon-dark'
 const LIGHT_THEME = 'github-light'
 
-export const Utterances = ({ repo }) => {
+function Utterances({ repo }) {
   const rootElm = React.createRef()
 
   useEffect(() => {
@@ -33,3 +33,5 @@ export const Utterances = ({ repo }) => {
 
   return <div className="utterances" ref={rootElm} />
 }
+
+export default Utterances

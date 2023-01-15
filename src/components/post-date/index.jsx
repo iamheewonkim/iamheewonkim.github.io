@@ -2,6 +2,7 @@ import React from 'react'
 
 import './index.scss'
 
-export const PostDate = ({ date }) => {
+function PostDate({ date }) {
   return <p className="post-date">{date}</p>
 }
+export default PostDate

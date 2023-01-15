@@ -1,5 +1,6 @@
 import React from 'react'
 
-export const PostContainer = ({ html }) => (
-  <div dangerouslySetInnerHTML={{ __html: html }} />
-)
+function PostContainer({ html }) {
+  return <div dangerouslySetInnerHTML={{ __html: html }} />
+}
+export default PostContainer

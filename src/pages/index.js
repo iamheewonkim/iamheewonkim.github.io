@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby'
 import _ from 'lodash'
 import React, { useMemo, useRef, useEffect, useState } from 'react'
-import { Bio } from '../components/bio'
-import { Category } from '../components/category'
+import Bio from '../components/bio'
+import Category from '../components/category'
 import { Contents } from '../components/contents'
-import { Head } from '../components/head'
+import Head from '../components/head'
 import { HOME_TITLE } from '../constants'
 import { useCategory } from '../hooks/useCategory'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
@@ -33,9 +33,18 @@ export default ({ data, location }) => {
   const [count, countRef, increaseCount] = useRenderedCount()
   const [category, selectCategory] = useCategory(DEST)
 
-  useEffect( tabRef => {
-    setDEST(!bioRef.current ? 316 : bioRef.current.getBoundingClientRect().bottom + window.pageYOffset + 24 )
-  }, [bioRef.current])
+  useEffect(
+    tabRef => {
+      setDEST(
+        !bioRef.current
+          ? 316
+          : bioRef.current.getBoundingClientRect().bottom +
+              window.pageYOffset +
+              24
+      )
+    },
+    [bioRef.current]
+  )
 
   useIntersectionObserver()
   useScrollEvent(() => {

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { GitHubIcon } from '../social-share/github-icon'
+import UnicornIcon from '../unicorn-icon'
 
 import './index.scss'
 
-export const Top = ({ title, location, rootPath }) => {
+function Top({ title, location, rootPath }) {
   const isRoot = location.pathname === rootPath
   return (
     <div className="top">
@@ -13,7 +13,9 @@ export const Top = ({ title, location, rootPath }) => {
           {title}
         </Link>
       )}
-      <GitHubIcon />
+      <UnicornIcon />
     </div>
   )
 }
+
+export default Top

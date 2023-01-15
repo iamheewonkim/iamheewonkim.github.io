@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import './index.scss'
 
-export const Header = ({ title, location, rootPath }) => {
+function Header({ title, location, rootPath }) {
   const isRoot = location.pathname === rootPath
   return (
     isRoot && (
@@ -15,3 +15,4 @@ export const Header = ({ title, location, rootPath }) => {
     )
   )
 }
+export default Header
