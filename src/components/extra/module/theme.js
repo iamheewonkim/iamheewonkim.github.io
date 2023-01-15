@@ -1,5 +1,5 @@
-import { THEME } from '../../constants'
-import * as Dom from '../../utils/dom'
+import { THEME } from '../../../constants'
+import * as Dom from '../../../utils/dom'
 
 export const getTheme = checked => {
   return checked ? THEME.DARK : THEME.LIGHT

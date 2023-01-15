@@ -2,13 +2,13 @@ import React from 'react'
 
 import Top from '../components/top'
 import Header from '../components/header'
-import ThemeSwitch from '../components/theme-switch'
+import ThemeSwitch from '../components/theme-switch/ThemeSwitch'
 import { Footer } from '../components/footer'
 import { rhythm } from '../utils/typography'
 
 import './index.scss'
 
-export const Layout = ({ location, title, children }) => {
+function Layout({ location, title, children }) {
   const rootPath = `${__PATH_PREFIX__}/`
 
   return (
@@ -30,3 +30,4 @@ export const Layout = ({ location, title, children }) => {
     </React.Fragment>
   )
 }
+export default Layout
