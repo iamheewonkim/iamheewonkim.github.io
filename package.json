@@ -8,9 +8,6 @@
     "url": "https://github.com/JaeYeopHan/gatsby-starter-bee/issues"
   },
   "dependencies": {
-    "@types/node": "^16.11.7",
-    "@types/react-dom": "^16.9.17",
-    "@types/styled-components": "^5.1.26",
     "gatsby": "^2.2.8",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-feed": "^2.1.0",
@@ -51,12 +48,10 @@
     "react-typography": "^0.16.13",
     "smooth-scroll": "^16.0.0",
     "smoothscroll-polyfill": "^0.4.4",
-    "styled-components": "^5.3.6",
     "typeface-catamaran": "0.0.54",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
     "typeface-noto-sans-kr": "0.0.63",
-    "typescript": "^4.9.4",
     "typography": "^0.16.17",
     "typography-theme-github": "^0.16.18"
   },
