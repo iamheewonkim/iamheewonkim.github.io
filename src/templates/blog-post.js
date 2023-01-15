@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 
-import Hr from '../components/hr'
+import { Hr } from '../components/extra'
 import Layout from '../layout'
 import Head from '../components/head'
-import PostTitle from '../components/post-title'
-import PostDate from '../components/post-date'
-import PostContainer from '../components/post/PostContainer'
+import {
+  PostContainer,
+  PostDate,
+  PostNavigator,
+  PostTitle,
+} from '../components/post'
 import Bio from '../components/bio'
-import PostNavigator from '../components/post-navigator'
 import Utterances from '../components/utterances'
 import * as ScrollManager from '../utils/scroll'
 

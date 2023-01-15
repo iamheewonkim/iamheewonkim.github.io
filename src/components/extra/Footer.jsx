@@ -2,11 +2,15 @@ import React from 'react'
 
 import './index.scss'
 
-export const Footer = () => (
-  <footer className="footer">
-    ©<a href="https://github.com/iamheewonkim">iamheewonkim</a>, Built with{' '}
-    <a href="https://github.com/JaeYeopHan/gatsby-starter-bee">
-      Gatsby-starter-bee
-    </a>
-  </footer>
-)
+function Footer() {
+  return (
+    <footer className="footer">
+      ©<a href="https://github.com/iamheewonkim">iamheewonkim</a>, Built with{' '}
+      <a href="https://github.com/JaeYeopHan/gatsby-starter-bee">
+        Gatsby-starter-bee
+      </a>
+    </footer>
+  )
+}
+
+export default Footer

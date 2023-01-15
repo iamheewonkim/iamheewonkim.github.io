@@ -1,9 +1,6 @@
 import React from 'react'
 
-import Top from '../components/top'
-import Header from '../components/header'
-import ThemeSwitch from '../components/theme-switch/ThemeSwitch'
-import { Footer } from '../components/footer'
+import { Top, Header, ThemeSwitch, Footer } from '../components/extra'
 import { rhythm } from '../utils/typography'
 
 import './index.scss'
